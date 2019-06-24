@@ -25,7 +25,7 @@ resource "aws_launch_configuration" "test-app-launch_configuration" {
   image_id = data.aws_ami.amazon-linux2-ecs-ami.id
   instance_type = "t2.medium"
   iam_instance_profile = data.aws_iam_instance_profile.ecs-instance-role.name  // Used to join ECS cluster
-  security_groups = ["sg-0b996637d85c6b3df"]   // Allow SSH access, inspect ECS agent
+  security_groups = ["sg-0b996637d85c6b3df", "sg-0c5cf22aef46d7d98"]   // Allow SSH access, inspect ECS agent, plus web
   enable_monitoring = false
 
   //  associate_public_ip_address = false

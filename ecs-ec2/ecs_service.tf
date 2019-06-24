@@ -17,7 +17,7 @@ resource "aws_ecs_task_definition" "test-app-task-definition" {
     "environment": [
       {"name": "key1", "value": "value1"}
     ],
-    "command": ["9999999"],
+    "command": [],
     "mountPoints": [],
     "volumesFrom": [],
     "logConfiguration": {
@@ -40,7 +40,7 @@ resource "aws_cloudwatch_log_group" "test-java-app" {
 
 // ECS Service
 resource "aws_ecs_service" "test-app-service" {
-  name = "teat-app-service"
+  name = "test-app-service"
   task_definition = aws_ecs_task_definition.test-app-task-definition.arn
   cluster = aws_ecs_cluster.test-app-cluster.name
   desired_count = 1

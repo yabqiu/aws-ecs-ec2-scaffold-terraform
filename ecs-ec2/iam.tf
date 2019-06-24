@@ -1,6 +1,6 @@
 resource "aws_iam_role" "ecsTaskExecutionRole" { // Optional
   name = "ecsTaskExecutionRole"
-  description = "XXXXX"
+  description = "Allow to run Amazon ECS tasks"
   path = "/ecs/"
 
   assume_role_policy = <<EOF
